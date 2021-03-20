@@ -9,7 +9,7 @@ import com.jap.numbercolor.model.ButtonsNumberRepository
 
 class ButtonsViewModel(private val buttonsNumberRepository: ButtonsNumberRepository) : ViewModel(){
 
-    val redArraylist = buttonsNumberRepository.getDatasource().redArrayList
+    val redArrayList = buttonsNumberRepository.getDatasource().redArrayList
     val greenArrayList = buttonsNumberRepository.getDatasource().greenArrayList
     val blueArrayList = buttonsNumberRepository.getDatasource().blueArrayList
     val allArrayList = buttonsNumberRepository.getDatasource().allArrayList

@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="start_button_red">#73FFCCCC</color>
+    <color name="stop_button_red">#FF2D2D</color>
+    <color name="start_button_green">#73CCFF99</color>
+    <color name="stop_button_green">#00EC00</color>
+    <color name="start_button_blue">#73BBFFEE</color>
+    <color name="stop_button_blue">#0072E3</color>
+
+
 </resources>

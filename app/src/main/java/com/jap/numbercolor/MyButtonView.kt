@@ -86,7 +86,9 @@ class MyButtonView : ConstraintLayout, View.OnClickListener{
             }
         }
     }
-
+    fun setText(text : String){
+        myButton.text = text
+    }
     override fun onClick(view: View?) {
 //        Log.e(TAG, "This has been clicked")
         myButton.isSelected = !myButton.isSelected

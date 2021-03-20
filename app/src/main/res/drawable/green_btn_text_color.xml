@@ -3,5 +3,5 @@
     <item android:state_selected="true"
         android:color="@android:color/white"/>
     <!-- 默認時的背景文字 -->
-    <item android:color="@android:color/holo_green_dark" />
+    <item android:color="@color/stop_button_green" />
 </selector>
