@@ -22,7 +22,6 @@ class ButtonsViewAdapter(
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-//        Log.e("position",position.toString())
         setUpButton(holder.button1,5 * position )
         setUpButton(holder.button2,5 * position + 1)
         setUpButton(holder.button3,5 * position + 2)

@@ -8,7 +8,7 @@ class ButtonsNumberDataSource {
     val allArrayList = getMyAllArrayList()
 
     private fun getMyAllArrayList() : ArrayList<String>{
-        var tempArrayList = arrayListOf<String>()
+        val tempArrayList = arrayListOf<String>()
         for (i in 1..49) {
             println(i)
             tempArrayList.add(String.format("%02d", i))
