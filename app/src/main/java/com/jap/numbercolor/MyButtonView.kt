@@ -7,16 +7,19 @@ import android.content.res.TypedArray
 import android.graphics.Color
 import android.util.AttributeSet
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.jap.numbercolor.R.drawable.*
+import com.jap.numbercolor.databinding.ComponentNumberbuttomBinding
+import com.jap.numbercolor.databinding.ItemButtonsBinding
 
 class MyButtonView : ConstraintLayout, View.OnClickListener{
     val TAG ="MyButtonView"
     var txtString = ""
-    private lateinit var myButton : Button
+    private lateinit var binding : ComponentNumberbuttomBinding
     var wrappedOnClickListener: OnClickListener ? = null
     val RED = 1
     val GREEN = 2
@@ -61,42 +64,41 @@ class MyButtonView : ConstraintLayout, View.OnClickListener{
     }
 
     private fun initView(){
-        View.inflate(context,R.layout.component_numberbuttom,this)
-        myButton = findViewById(R.id.myButton)
-        myButton.text = txtString
+//        View.inflate(context,R.layout.component_numberbuttom,this)
+        binding = ComponentNumberbuttomBinding.inflate(LayoutInflater.from(context), this)
+        binding.myButton.text = txtString
         val txtLayoutParams = LayoutParams(LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT)
-        myButton.layoutParams = txtLayoutParams
-        myButton.setOnClickListener(this)
+        binding.myButton.layoutParams = txtLayoutParams
+        binding.myButton.setOnClickListener(this)
     }
 
     @SuppressLint("ResourceType", "UseCompatLoadingForDrawables")
     fun setColor(color : Int){
         when (color){
             RED -> {
-                myButton.background = context.getDrawable(red_button)
-                myButton.setTextColor(resources.getColorStateList(red_btn_text_color,null))
+                binding.myButton.background = context.getDrawable(red_button)
+                binding.myText.setTextColor(resources.getColorStateList(red_btn_text_color,null))
             }
             GREEN -> {
-                myButton.background = context.getDrawable(green_button)
-                myButton.setTextColor(resources.getColorStateList(green_btn_text_color,null))
+                binding.myButton.background = context.getDrawable(green_button)
+                binding.myText.setTextColor(resources.getColorStateList(green_btn_text_color,null))
             }
             BLUE -> {
-                myButton.background = context.getDrawable(blue_button)
-                myButton.setTextColor(resources.getColorStateList(blue_btn_text_color,null))
+                binding.myButton.background = context.getDrawable(blue_button)
+                binding.myButton.setTextColor(resources.getColorStateList(blue_btn_text_color,null))
             }
         }
     }
     fun setText(text : String){
-        myButton.text = text
+        binding.myText.text = text
     }
     override fun onClick(view: View?) {
-//        Log.e(TAG, "This has been clicked")
-        myButton.isSelected = !myButton.isSelected
+        binding.myButton.isSelected = !binding.myButton.isSelected
+        binding.myText.isSelected = !binding.myText.isSelected
         wrappedOnClickListener?.onClick(view)
     }
 
     override fun setOnClickListener(l: OnClickListener?) {
-//        Log.e(TAG, "setOnClickListener")
         wrappedOnClickListener = l
     }
 }
