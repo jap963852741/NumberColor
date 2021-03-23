@@ -1,8 +1,7 @@
 package com.jap.numbercolor.model
 
-
 class ButtonsNumberRepository (private val dataSource: ButtonsNumberDataSource) {
-    fun getDatasource(): ButtonsNumberDataSource {
+    fun getDataSource(): ButtonsNumberDataSource {
         return dataSource
     }
 }

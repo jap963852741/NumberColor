@@ -4,18 +4,13 @@ import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.content.Context
 import android.content.res.TypedArray
-import android.graphics.Color
 import android.util.AttributeSet
-import android.util.DisplayMetrics
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.jap.numbercolor.R.drawable.*
 import com.jap.numbercolor.databinding.ComponentNumberbuttomBinding
-import com.jap.numbercolor.databinding.ItemButtonsBinding
 
 class MyButtonView : ConstraintLayout, View.OnClickListener{
     val TAG ="MyButtonView"
@@ -65,12 +60,10 @@ class MyButtonView : ConstraintLayout, View.OnClickListener{
     }
 
     private fun initView(){
-
         binding = ComponentNumberbuttomBinding.inflate(LayoutInflater.from(context), this)
         binding.myButton.text = txtString
         val txtLayoutParams = LayoutParams(LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT)
         binding.myButton.layoutParams = txtLayoutParams
-        binding.myButton.height = 0
         binding.myButton.setOnClickListener(this)
     }
 
@@ -87,7 +80,7 @@ class MyButtonView : ConstraintLayout, View.OnClickListener{
             }
             BLUE -> {
                 binding.myButton.background = context.getDrawable(blue_button)
-                binding.myButton.setTextColor(resources.getColorStateList(blue_btn_text_color,null))
+                binding.myText.setTextColor(resources.getColorStateList(blue_btn_text_color,null))
             }
         }
     }

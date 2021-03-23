@@ -34,8 +34,4 @@ class MainActivity : AppCompatActivity(){
 
     }
 
-//    override fun onClick(v: View?) {
-//        Log.e(TAG,"ButtonClick")
-//    }
-
 }

@@ -1,12 +1,9 @@
 package com.jap.numbercolor.ui
 
-import android.util.DisplayMetrics
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
-import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import com.jap.numbercolor.MyButtonView
 import com.jap.numbercolor.databinding.ItemButtonsBinding
@@ -22,17 +19,7 @@ class ButtonsViewAdapter(
 
     private lateinit var binding : ItemButtonsBinding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-
-//        val metric = DisplayMetrics()
-//        parent.context.display?.getRealMetrics(metric)
-//        val width = metric.widthPixels
-//        Log.e(TAG,width.toString())
-//        for(i in parent.children){
-//            Log.e(TAG, "i=$width")
-//            i.layoutParams.height = width/10
-//        }
         binding = ItemButtonsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-
         return VH(binding)
     }
 
@@ -53,14 +40,18 @@ class ButtonsViewAdapter(
     private fun setUpButton(button :MyButtonView, text_idx :Int){
         if(text_idx < allDataList.size) {
             button.setText(allDataList[text_idx])
+            Log.e(TAG,text_idx.toString())
             when {
                 allDataList[text_idx] in redDataList -> {
+                    Log.e(TAG,"redDataList")
                     button.setColor(button.RED)
                 }
                 allDataList[text_idx] in blueDataList -> {
+                    Log.e(TAG,"blueDataList")
                     button.setColor(button.BLUE)
                 }
                 allDataList[text_idx] in greenDataList -> {
+                    Log.e(TAG,"greenDataList")
                     button.setColor(button.GREEN)
                 }
             }
