@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.Color
 import android.util.AttributeSet
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -64,11 +65,12 @@ class MyButtonView : ConstraintLayout, View.OnClickListener{
     }
 
     private fun initView(){
-//        View.inflate(context,R.layout.component_numberbuttom,this)
+
         binding = ComponentNumberbuttomBinding.inflate(LayoutInflater.from(context), this)
         binding.myButton.text = txtString
         val txtLayoutParams = LayoutParams(LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT)
         binding.myButton.layoutParams = txtLayoutParams
+        binding.myButton.height = 0
         binding.myButton.setOnClickListener(this)
     }
 

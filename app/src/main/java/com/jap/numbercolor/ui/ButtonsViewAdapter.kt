@@ -1,11 +1,16 @@
 package com.jap.numbercolor.ui
 
+import android.util.DisplayMetrics
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import com.jap.numbercolor.MyButtonView
 import com.jap.numbercolor.databinding.ItemButtonsBinding
+
 
 class ButtonsViewAdapter(
     private val allDataList: ArrayList<String>,
@@ -13,11 +18,21 @@ class ButtonsViewAdapter(
     private val blueDataList: ArrayList<String>,
     private val greenDataList: ArrayList<String>
 ) : RecyclerView.Adapter<VH>() {
-//    val TAG = "ButtonsViewAdapter"
+    val TAG = "ButtonsViewAdapter"
 
     private lateinit var binding : ItemButtonsBinding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
+
+//        val metric = DisplayMetrics()
+//        parent.context.display?.getRealMetrics(metric)
+//        val width = metric.widthPixels
+//        Log.e(TAG,width.toString())
+//        for(i in parent.children){
+//            Log.e(TAG, "i=$width")
+//            i.layoutParams.height = width/10
+//        }
         binding = ItemButtonsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
         return VH(binding)
     }
 
